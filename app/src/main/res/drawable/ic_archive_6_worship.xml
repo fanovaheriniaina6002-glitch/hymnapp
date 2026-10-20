@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="200dp"
+    android:height="260dp"
+    android:viewportWidth="200"
+    android:viewportHeight="260">
+    <path android:pathData="M0,0h200v260h-200z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:startX="0"
+                android:startY="0"
+                android:endX="200"
+                android:endY="260"
+                android:type="linear">
+                <item android:offset="0.0" android:color="#F3E5D8" />
+                <item android:offset="0.5" android:color="#C9A895" />
+                <item android:offset="1.0" android:color="#681828" />
+            </gradient>
+        </aapt:attr>
+    </path>
+    <!-- Worshippers Fellowship Silhouette -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M60,92 m-14,0 a14,14 0 1,0 28,0 a14,14 0 1,0 -28,0" />
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M100,86 m-16,0 a16,16 0 1,0 32,0 a16,16 0 1,0 -32,0" />
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M140,92 m-14,0 a14,14 0 1,0 28,0 a14,14 0 1,0 -28,0" />
+    <path
+        android:fillColor="#FAF3EE"
+        android:pathData="M35,158 C35,126 55,112 100,112 C145,112 165,126 165,158 Z" />
+</vector>

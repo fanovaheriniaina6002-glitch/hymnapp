@@ -1,0 +1,766 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rakitsary_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F9F6EE"
+    android:clickable="true"
+    android:focusable="true">
+
+    <!-- Main Rakitsary Gallery View -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <!-- Pinned Top Floating Header Capsule (0% blur, 60 FPS Solid Bento) -->
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="16dp"
+            android:paddingTop="14dp"
+            android:paddingEnd="16dp"
+            android:paddingBottom="8dp">
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="@color/surface_container_lowest"
+                app:cardCornerRadius="999dp"
+                app:cardElevation="2dp"
+                app:strokeColor="#E6DCC0C1"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingStart="10dp"
+                    android:paddingTop="6dp"
+                    android:paddingEnd="10dp"
+                    android:paddingBottom="6dp">
+
+                    <!-- Leading Action: Back Chevron Button -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/btn_rakitsary_back"
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:clickable="true"
+                        android:focusable="true"
+                        app:cardBackgroundColor="@color/surface_container_lowest"
+                        app:cardCornerRadius="18dp"
+                        app:cardElevation="1dp"
+                        app:rippleColor="@color/border_eae0e2"
+                        app:strokeColor="#33DCC0C1"
+                        app:strokeWidth="1dp">
+
+                        <ImageView
+                            android:layout_width="17dp"
+                            android:layout_height="17dp"
+                            android:layout_gravity="center"
+                            android:contentDescription="Miverina"
+                            android:src="@drawable/ic_arrow_back_ios"
+                            app:tint="@color/primary_container" />
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <!-- Brand Anchored Title Stack -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tv_rakitsary_header_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/plus_jakarta_sans"
+                            android:letterSpacing="0.01"
+                            android:text="JESOSY MAMONJY"
+                            android:textColor="@color/primary_container"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/plus_jakarta_sans"
+                            android:letterSpacing="0.22"
+                            android:text="M. A. DAOUD"
+                            android:textAllCaps="true"
+                            android:textColor="#BF781C2E"
+                            android:textSize="9sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <!-- Trailing Action: Photo Library Button -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/btn_rakitsary_camera"
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:clickable="true"
+                        android:focusable="true"
+                        app:cardBackgroundColor="@color/surface_container_lowest"
+                        app:cardCornerRadius="18dp"
+                        app:cardElevation="1dp"
+                        app:rippleColor="@color/border_eae0e2"
+                        app:strokeColor="#33DCC0C1"
+                        app:strokeWidth="1dp">
+
+                        <ImageView
+                            android:layout_width="19dp"
+                            android:layout_height="19dp"
+                            android:layout_gravity="center"
+                            android:contentDescription="Tahiry sary"
+                            android:src="@drawable/ic_photo_library"
+                            app:tint="@color/primary_container" />
+                    </com.google.android.material.card.MaterialCardView>
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+        </FrameLayout>
+
+        <!-- Main Content Canvas -->
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/rakitsary_scroll_view"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:clipToPadding="false"
+            android:fillViewport="true"
+            android:paddingStart="16dp"
+            android:paddingTop="4dp"
+            android:paddingEnd="16dp"
+            android:paddingBottom="112dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!-- Page Title & Stats Section -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="bottom"
+                    android:orientation="horizontal"
+                    android:paddingTop="6dp">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/plus_jakarta_sans"
+                            android:letterSpacing="-0.015"
+                            android:text="Rakitsary"
+                            android:textColor="@color/primary_container"
+                            android:textSize="28sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:fontFamily="@font/inter"
+                            android:text="Tahirintsary sy tantara sarobidy"
+                            android:textColor="#625E55"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
+                    <!-- Counter Badge ("41 Sary voatahiry") -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:cardBackgroundColor="#14781C2E"
+                        app:cardCornerRadius="999dp"
+                        app:cardElevation="0dp"
+                        app:strokeColor="#26781C2E"
+                        app:strokeWidth="1dp">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:paddingStart="12dp"
+                            android:paddingTop="5dp"
+                            android:paddingEnd="12dp"
+                            android:paddingBottom="5dp">
+
+                            <View
+                                android:layout_width="6dp"
+                                android:layout_height="6dp"
+                                android:background="@drawable/bg_section_indicator" />
+
+                            <TextView
+                                android:id="@+id/tv_rakitsary_count"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="6dp"
+                                android:fontFamily="@font/plus_jakarta_sans"
+                                android:letterSpacing="0.04"
+                                android:text="41 Sary voatahiry"
+                                android:textColor="@color/primary_container"
+                                android:textSize="11sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+                </LinearLayout>
+
+                <!-- Horizontal Filter Bar -->
+                <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:layout_marginBottom="10dp"
+                    android:clipToPadding="false"
+                    android:scrollbars="none">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <!-- Active Pill Filter: Rehetra (41) -->
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/chip_rakitsary_all"
+                            android:layout_width="wrap_content"
+                            android:layout_height="36dp"
+                            android:layout_marginEnd="8dp"
+                            android:clickable="true"
+                            android:focusable="true"
+                            app:cardBackgroundColor="@color/primary_container"
+                            app:cardCornerRadius="999dp"
+                            app:cardElevation="2dp"
+                            app:strokeColor="@color/primary_container"
+                            app:strokeWidth="1dp">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:orientation="horizontal"
+                                android:paddingStart="14dp"
+                                android:paddingEnd="14dp">
+
+                                <ImageView
+                                    android:id="@+id/icon_chip_rakitsary_all"
+                                    android:layout_width="15dp"
+                                    android:layout_height="15dp"
+                                    android:layout_marginEnd="6dp"
+                                    android:contentDescription="@null"
+                                    android:src="@drawable/ic_auto_awesome"
+                                    app:tint="@color/white" />
+
+                                <TextView
+                                    android:id="@+id/tv_chip_rakitsary_all"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/plus_jakarta_sans"
+                                    android:text="Rehetra (41)"
+                                    android:textColor="@color/white"
+                                    android:textSize="12sp"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <!-- Filter Pill 2: Fiangonana (35) -->
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/chip_rakitsary_foibe"
+                            android:layout_width="wrap_content"
+                            android:layout_height="36dp"
+                            android:layout_marginEnd="8dp"
+                            android:clickable="true"
+                            android:focusable="true"
+                            app:cardBackgroundColor="@color/surface_container_lowest"
+                            app:cardCornerRadius="999dp"
+                            app:cardElevation="0dp"
+                            app:strokeColor="#E6FFFFFF"
+                            app:strokeWidth="1dp">
+
+                            <TextView
+                                android:id="@+id/tv_chip_rakitsary_foibe"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:fontFamily="@font/plus_jakarta_sans"
+                                android:gravity="center"
+                                android:paddingStart="16dp"
+                                android:paddingEnd="16dp"
+                                android:text="Fiangonana (35)"
+                                android:textColor="#625E55"
+                                android:textSize="12sp"
+                                android:textStyle="bold" />
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <!-- Filter Pill 3: Mpitandrina -->
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/chip_rakitsary_daoud"
+                            android:layout_width="wrap_content"
+                            android:layout_height="36dp"
+                            android:layout_marginEnd="8dp"
+                            android:clickable="true"
+                            android:focusable="true"
+                            app:cardBackgroundColor="@color/surface_container_lowest"
+                            app:cardCornerRadius="999dp"
+                            app:cardElevation="0dp"
+                            app:strokeColor="#E6FFFFFF"
+                            app:strokeWidth="1dp">
+
+                            <TextView
+                                android:id="@+id/tv_chip_rakitsary_daoud"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:fontFamily="@font/plus_jakarta_sans"
+                                android:gravity="center"
+                                android:paddingStart="16dp"
+                                android:paddingEnd="16dp"
+                                android:text="Mpitandrina"
+                                android:textColor="#625E55"
+                                android:textSize="12sp"
+                                android:textStyle="bold" />
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <!-- Filter Pill 4: Fotoana Manamarika -->
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/chip_rakitsary_fifohazana"
+                            android:layout_width="wrap_content"
+                            android:layout_height="36dp"
+                            android:clickable="true"
+                            android:focusable="true"
+                            app:cardBackgroundColor="@color/surface_container_lowest"
+                            app:cardCornerRadius="999dp"
+                            app:cardElevation="0dp"
+                            app:strokeColor="#E6FFFFFF"
+                            app:strokeWidth="1dp">
+
+                            <TextView
+                                android:id="@+id/tv_chip_rakitsary_fifohazana"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:fontFamily="@font/plus_jakarta_sans"
+                                android:gravity="center"
+                                android:paddingStart="16dp"
+                                android:paddingEnd="16dp"
+                                android:text="Fotoana Manamarika"
+                                android:textColor="#625E55"
+                                android:textSize="12sp"
+                                android:textStyle="bold" />
+                        </com.google.android.material.card.MaterialCardView>
+
+                    </LinearLayout>
+                </HorizontalScrollView>
+
+                <!-- 2-Column Photo Gallery Grid (All images clickable -> opens PhotoDetailScreen) -->
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_rakitsary_grid"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="-6dp"
+                    android:layout_marginEnd="-6dp"
+                    android:nestedScrollingEnabled="false" />
+
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+    </LinearLayout>
+
+    <!-- ========================================================================= -->
+    <!-- PHOTO DETAIL SCREEN (#lightbox-modal - Solid Bento 0% blur / 60 FPS)      -->
+    <!-- ========================================================================= -->
+    <LinearLayout
+        android:id="@+id/rakitsary_detail_modal_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#0B0B0C"
+        android:clickable="true"
+        android:focusable="true"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:visibility="gone">
+
+        <!-- 1. Top Control Bar (Close, Counter 12 / 41, Favorite, Share) -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingTop="8dp">
+
+            <!-- Close Button -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/btn_modal_close_icon"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:clickable="true"
+                android:focusable="true"
+                app:cardBackgroundColor="#1C1C1E"
+                app:cardCornerRadius="18dp"
+                app:cardElevation="0dp"
+                app:rippleColor="#38383A"
+                app:strokeColor="#38383A"
+                app:strokeWidth="1dp">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center"
+                    android:contentDescription="Fermer"
+                    android:src="@drawable/ic_close"
+                    app:tint="@color/white" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1" />
+
+            <!-- Counter Pill ("12 / 41") -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="#1C1C1E"
+                app:cardCornerRadius="999dp"
+                app:cardElevation="0dp"
+                app:strokeColor="#38383A"
+                app:strokeWidth="1dp">
+
+                <TextView
+                    android:id="@+id/tv_modal_counter_pill"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/plus_jakarta_sans"
+                    android:letterSpacing="0.04"
+                    android:paddingStart="14dp"
+                    android:paddingTop="5dp"
+                    android:paddingEnd="14dp"
+                    android:paddingBottom="5dp"
+                    android:text="12 / 41"
+                    android:textColor="@color/white_90"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1" />
+
+            <!-- Right Actions: Favorite + Share -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/btn_modal_favorite"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_marginEnd="8dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    app:cardBackgroundColor="#1C1C1E"
+                    app:cardCornerRadius="18dp"
+                    app:cardElevation="0dp"
+                    app:rippleColor="#38383A"
+                    app:strokeColor="#38383A"
+                    app:strokeWidth="1dp">
+
+                    <ImageView
+                        android:id="@+id/icon_modal_favorite"
+                        android:layout_width="19dp"
+                        android:layout_height="19dp"
+                        android:layout_gravity="center"
+                        android:contentDescription="Mamin'ny fo"
+                        android:src="@drawable/ic_favorite_border"
+                        app:tint="@color/white" />
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/btn_modal_share"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    app:cardBackgroundColor="#1C1C1E"
+                    app:cardCornerRadius="18dp"
+                    app:cardElevation="0dp"
+                    app:rippleColor="#38383A"
+                    app:strokeColor="#38383A"
+                    app:strokeWidth="1dp">
+
+                    <ImageView
+                        android:layout_width="19dp"
+                        android:layout_height="19dp"
+                        android:layout_gravity="center"
+                        android:contentDescription="Hizara"
+                        android:src="@drawable/ic_share"
+                        app:tint="@color/white" />
+                </com.google.android.material.card.MaterialCardView>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- 2. Center Image Viewer Container -->
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:paddingTop="16dp"
+            android:paddingBottom="16dp">
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                app:cardBackgroundColor="#000000"
+                app:cardCornerRadius="26dp"
+                app:cardElevation="0dp"
+                app:strokeColor="#38383A"
+                app:strokeWidth="1dp">
+
+                <ImageView
+                    android:id="@+id/iv_modal_photo"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:contentDescription="@null"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_archive_1_gathering" />
+            </com.google.android.material.card.MaterialCardView>
+        </FrameLayout>
+
+        <!-- 3. Bottom Solid Bento Detail Sheet (bg-[#1C1C1E] border-[#38383A] rounded-[28px] p-5) -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="#1C1C1E"
+            app:cardCornerRadius="28dp"
+            app:cardElevation="0dp"
+            app:strokeColor="#38383A"
+            app:strokeWidth="1dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <!-- Drag Handle Pill -->
+                <View
+                    android:layout_width="40dp"
+                    android:layout_height="4dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginBottom="12dp"
+                    android:background="@drawable/bg_hero_badge_pill" />
+
+                <!-- Category Gold Badge + Archive Year Row -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:cardBackgroundColor="#33E0B066"
+                        app:cardCornerRadius="999dp"
+                        app:cardElevation="0dp"
+                        app:strokeColor="#66E0B066"
+                        app:strokeWidth="1dp">
+
+                        <TextView
+                            android:id="@+id/tv_modal_category_badge"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/plus_jakarta_sans"
+                            android:letterSpacing="0.06"
+                            android:paddingStart="10dp"
+                            android:paddingTop="3dp"
+                            android:paddingEnd="10dp"
+                            android:paddingBottom="3dp"
+                            android:text="FIANGONANA"
+                            android:textAllCaps="true"
+                            android:textColor="#E0B066"
+                            android:textSize="10sp"
+                            android:textStyle="bold" />
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <Space
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        android:layout_weight="1" />
+
+                    <TextView
+                        android:id="@+id/tv_modal_year_badge"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/inter"
+                        android:text="Tahirintsary 1968"
+                        android:textColor="#99FFFFFF"
+                        android:textSize="11sp" />
+                </LinearLayout>
+
+                <!-- Title & Subtitle -->
+                <TextView
+                    android:id="@+id/tv_modal_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/plus_jakarta_sans"
+                    android:text="Tempoly Ankorondrano"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_modal_location"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:fontFamily="@font/inter"
+                    android:text="Niorina 1975 • Antananarivo"
+                    android:textColor="#B3FFFFFF"
+                    android:textSize="12sp" />
+
+                <!-- Historical Description -->
+                <TextView
+                    android:id="@+id/tv_modal_description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/inter"
+                    android:lineSpacingExtra="4dp"
+                    android:text="Vavolombelon'ny fitahian'ny Tompo sy ny firoborobon'ny asa fitoriana ny Filazantsara teto Madagasikara. Toerana masina fivorian'ny mpino an-jatony."
+                    android:textColor="#D9FFFFFF"
+                    android:textSize="13sp" />
+
+                <!-- Divider -->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="14dp"
+                    android:layout_marginBottom="12dp"
+                    android:background="#38383A" />
+
+                <!-- Previous / Indicator Dots / Next Navigation Row -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <!-- Previous Photo Button -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/btn_modal_prev_photo"
+                        android:layout_width="34dp"
+                        android:layout_height="34dp"
+                        android:clickable="true"
+                        android:focusable="true"
+                        app:cardBackgroundColor="#2C2C2E"
+                        app:cardCornerRadius="17dp"
+                        app:cardElevation="0dp"
+                        app:rippleColor="#38383A"
+                        app:strokeColor="#38383A"
+                        app:strokeWidth="1dp">
+
+                        <ImageView
+                            android:layout_width="18dp"
+                            android:layout_height="18dp"
+                            android:layout_gravity="center"
+                            android:contentDescription="Teo aloha"
+                            android:src="@drawable/ic_arrow_back"
+                            app:tint="@color/white" />
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <Space
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        android:layout_weight="1" />
+
+                    <!-- Indicator Dots Pill -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:cardBackgroundColor="#2C2C2E"
+                        app:cardCornerRadius="999dp"
+                        app:cardElevation="0dp"
+                        app:strokeColor="#38383A"
+                        app:strokeWidth="1dp">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:paddingStart="12dp"
+                            android:paddingTop="6dp"
+                            android:paddingEnd="12dp"
+                            android:paddingBottom="6dp">
+
+                            <View
+                                android:layout_width="6dp"
+                                android:layout_height="6dp"
+                                android:layout_marginEnd="6dp"
+                                android:background="@drawable/bg_badge_dark_pill" />
+
+                            <View
+                                android:layout_width="16dp"
+                                android:layout_height="6dp"
+                                android:layout_marginEnd="6dp"
+                                android:background="@drawable/bg_hero_badge_pill" />
+
+                            <View
+                                android:layout_width="6dp"
+                                android:layout_height="6dp"
+                                android:layout_marginEnd="6dp"
+                                android:background="@drawable/bg_badge_dark_pill" />
+
+                            <View
+                                android:layout_width="6dp"
+                                android:layout_height="6dp"
+                                android:background="@drawable/bg_badge_dark_pill" />
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <Space
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        android:layout_weight="1" />
+
+                    <!-- Next Photo Button -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/btn_modal_next_photo"
+                        android:layout_width="34dp"
+                        android:layout_height="34dp"
+                        android:clickable="true"
+                        android:focusable="true"
+                        app:cardBackgroundColor="#2C2C2E"
+                        app:cardCornerRadius="17dp"
+                        app:cardElevation="0dp"
+                        app:rippleColor="#38383A"
+                        app:strokeColor="#38383A"
+                        app:strokeWidth="1dp">
+
+                        <ImageView
+                            android:layout_width="18dp"
+                            android:layout_height="18dp"
+                            android:layout_gravity="center"
+                            android:contentDescription="Manaraka"
+                            android:src="@drawable/ic_arrow_forward"
+                            app:tint="@color/white" />
+                    </com.google.android.material.card.MaterialCardView>
+                </LinearLayout>
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+    </LinearLayout>
+
+</FrameLayout>

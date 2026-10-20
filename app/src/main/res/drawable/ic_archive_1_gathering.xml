@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="200dp"
+    android:height="260dp"
+    android:viewportWidth="200"
+    android:viewportHeight="260">
+    <path android:pathData="M0,0h200v260h-200z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:startX="0"
+                android:startY="0"
+                android:endX="200"
+                android:endY="260"
+                android:type="linear">
+                <item android:offset="0.0" android:color="#EFE4D8" />
+                <item android:offset="0.55" android:color="#D6BEA8" />
+                <item android:offset="1.0" android:color="#781C2E" />
+            </gradient>
+        </aapt:attr>
+    </path>
+    <!-- Sunlit Chapel Silhouette -->
+    <path
+        android:fillColor="#FAF6F2"
+        android:pathData="M100,45 L145,80 L145,155 L55,155 L55,80 Z" />
+    <path
+        android:fillColor="#781C2E"
+        android:pathData="M97,24 h6 v9 h9 v5 h-9 v14 h-6 v-14 h-9 v-5 h9 z" />
+    <path
+        android:fillColor="#8B3A4A"
+        android:pathData="M88,110 h24 v45 h-24 z" />
+</vector>

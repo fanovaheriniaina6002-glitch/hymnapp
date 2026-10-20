@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="200dp"
+    android:height="260dp"
+    android:viewportWidth="200"
+    android:viewportHeight="260">
+    <path android:pathData="M0,0h200v260h-200z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:startX="0"
+                android:startY="0"
+                android:endX="200"
+                android:endY="260"
+                android:type="linear">
+                <item android:offset="0.0" android:color="#D9D4CE" />
+                <item android:offset="0.55" android:color="#8C7E75" />
+                <item android:offset="1.0" android:color="#3B1A22" />
+            </gradient>
+        </aapt:attr>
+    </path>
+    <!-- Mission Globe Silhouette -->
+    <path
+        android:fillColor="#F5F0EB"
+        android:pathData="M100,95 m-36,0 a36,36 0 1,0 72,0 a36,36 0 1,0 -72,0" />
+    <path
+        android:fillColor="#781C2E"
+        android:pathData="M84,132 h32 v8 h-32 z M96,140 h8 v16 h-8 z M78,156 h44 v6 h-44 z" />
+</vector>

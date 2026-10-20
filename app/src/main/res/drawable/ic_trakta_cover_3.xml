@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="100dp"
+    android:height="142dp"
+    android:viewportWidth="100"
+    android:viewportHeight="142">
+    <path android:pathData="M0,0h100v142h-100z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:startX="50"
+                android:startY="0"
+                android:endX="50"
+                android:endY="142"
+                android:type="linear">
+                <item android:offset="0.0" android:color="#3D426B" />
+                <item android:offset="0.55" android:color="#26283D" />
+                <item android:offset="1.0" android:color="#1A1A24" />
+            </gradient>
+        </aapt:attr>
+    </path>
+    <!-- Open Bible & Dove Ray Motif for "Soa Ihany" -->
+    <path
+        android:fillColor="#33FFFFFF"
+        android:pathData="M50,36 m-20,0 a20,20 0 1,0 40,0 a20,20 0 1,0 -40,0" />
+    <path
+        android:fillColor="#FFF9E8D0"
+        android:pathData="M26,56 C36,52 46,54 50,58 C54,54 64,52 74,56 L74,82 C64,78 54,80 50,84 C46,80 36,78 26,82 Z" />
+</vector>
